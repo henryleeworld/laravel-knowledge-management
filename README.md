@@ -22,3 +22,12 @@ $ php artisan migrate --seed
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以登入經由 `/login` 來進行登入，預社的電子郵件和密碼分別為 __admin@admin.com__ 和 __password__ 。
+
+----
+
+## 畫面截圖
+![](https://i.imgur.com/OlQglSf.png)
+> 新增問題，檢視解答是否完整
+
+![](https://i.imgur.com/z0cRpU4.png)
+> 設法將知識文字化，讓這無形的經驗化為有形的文字，建立起企業知識庫
