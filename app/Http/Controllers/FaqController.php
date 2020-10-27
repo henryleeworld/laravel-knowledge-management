@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\FaqCategory;
+use App\Models\FaqCategory;
 
 class FaqController extends Controller
 {

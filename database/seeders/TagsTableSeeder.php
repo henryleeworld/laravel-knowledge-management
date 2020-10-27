@@ -1,8 +1,11 @@
 <?php
 
-use App\Tag;
+namespace Database\Seeders;
+
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Faker\Factory;
 
 class TagsTableSeeder extends Seeder
 {
@@ -13,7 +16,7 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         foreach(range(1, 30) as $id)
         {

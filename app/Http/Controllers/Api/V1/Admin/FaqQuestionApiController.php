@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
-use App\FaqQuestion;
+use App\Models\FaqQuestion;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFaqQuestionRequest;
 use App\Http\Requests\UpdateFaqQuestionRequest;

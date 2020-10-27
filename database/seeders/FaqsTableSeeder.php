@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
 
-use App\FaqCategory;
-use App\FaqQuestion;
+use App\Models\FaqCategory;
+use App\Models\FaqQuestion;
+use Faker\Factory;
+use Illuminate\Database\Seeder;
 
 class FaqsTableSeeder extends Seeder
 {
@@ -14,7 +16,7 @@ class FaqsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
         $categories = ['System usage', 'Integrations', 'Payments'];
 
         foreach($categories as $category)

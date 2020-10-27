@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::redirect('/home', '/admin');
 Auth::routes(['register' => false]);
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('categories/check_slug', 'CategoryController@check_slug')->name('categories.check_slug');
-Route::get('categories/{slug}/{category}', 'CategoryController@show')->name('categories.show');
-Route::get('tags/check_slug', 'TagController@check_slug')->name('tags.check_slug');
-Route::get('tags/{slug}/{tag}', 'TagController@show')->name('tags.show');
-Route::get('articles/check_slug', 'ArticleController@check_slug')->name('articles.check_slug');
-Route::get('articles/{slug}/{article}', 'ArticleController@show')->name('articles.show');
-Route::get('articles', 'ArticleController@index')->name('articles.index');
-Route::get('faq', 'FaqController@index')->name('faq.index');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('categories/check_slug', [CategoryController::class, 'check_slug'])->name('categories.check_slug');
+Route::get('categories/{slug}/{category}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('tags/check_slug', [TagController::class, 'check_slug'])->name('tags.check_slug');
+Route::get('tags/{slug}/{tag}', [TagController::class, 'show'])->name('tags.show');
+Route::get('articles/check_slug', [ArticleController::class, 'check_slug'])->name('articles.check_slug');
+Route::get('articles/{slug}/{article}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('faq', [FaqController::class, 'index'])->name('faq.index');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

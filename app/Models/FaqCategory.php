@@ -1,15 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Permission extends Model
+class FaqCategory extends Model
 {
     use SoftDeletes;
 
-    public $table = 'permissions';
+    public $table = 'faq_categories';
 
     protected $dates = [
         'created_at',
@@ -18,14 +18,14 @@ class Permission extends Model
     ];
 
     protected $fillable = [
-        'title',
+        'category',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    public function roles()
+    public function faqQuestions()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->hasMany(FaqQuestion::class, 'category_id', 'id');
     }
 }

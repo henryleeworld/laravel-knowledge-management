@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Article extends Model
+class Tag extends Model
 {
     use SoftDeletes, Sluggable;
 
-    public $table = 'articles';
+    public $table = 'tags';
 
     protected $dates = [
         'created_at',
@@ -19,32 +19,23 @@ class Article extends Model
     ];
 
     protected $fillable = [
-        'title',
+        'name',
         'slug',
-        'full_text',
-        'short_text',
-        'views_count',
-        'category_id',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    public function category()
+    public function articles()
     {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Article::class);
     }
     
     public function sluggable()
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'name'
             ]
         ];
     }

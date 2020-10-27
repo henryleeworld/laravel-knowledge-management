@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\FaqCategory;
+use App\Models\FaqCategory;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyFaqCategoryRequest;
 use App\Http\Requests\StoreFaqCategoryRequest;

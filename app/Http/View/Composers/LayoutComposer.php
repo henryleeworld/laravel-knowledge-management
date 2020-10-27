@@ -2,9 +2,9 @@
 
 namespace App\Http\View\Composers;
 
-use App\Article;
-use App\Category;
-use App\Tag;
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\View\View;
 
 class LayoutComposer

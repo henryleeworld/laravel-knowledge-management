@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\FaqCategory;
-use App\FaqQuestion;
+use App\Models\FaqCategory;
+use App\Models\FaqQuestion;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyFaqQuestionRequest;
 use App\Http\Requests\StoreFaqQuestionRequest;

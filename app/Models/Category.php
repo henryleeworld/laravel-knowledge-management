@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Tag extends Model
+class Category extends Model
 {
     use SoftDeletes, Sluggable;
 
-    public $table = 'tags';
+    public $table = 'categories';
 
     protected $dates = [
         'created_at',
@@ -28,7 +28,7 @@ class Tag extends Model
 
     public function articles()
     {
-        return $this->belongsToMany(Article::class);
+        return $this->hasMany(Article::class);
     }
     
     public function sluggable()

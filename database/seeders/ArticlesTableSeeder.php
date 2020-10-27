@@ -1,11 +1,13 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
 
-use App\Article;
-use App\Category;
-use App\Tag;
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Tag;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Faker\Factory;
+use Illuminate\Database\Seeder;
 
 class ArticlesTableSeeder extends Seeder
 {
@@ -16,7 +18,7 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
         $categories = Category::pluck('id');
         $tags = Tag::pluck('id');
 
