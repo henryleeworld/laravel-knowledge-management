@@ -206,6 +206,7 @@ return [
     'select_dt_placeholder'                => '請選擇其中一個日期／時間 field',
     'select_users_placeholder'             => '請選擇其中一位使用者',
     'send'                                 => '傳送',
+    'send_password_reset_link'             => '發送重設密碼連結',
     'serial_number'                        => '序號',
     'simple_user'                          => '簡易使用者',
     'skype'                                => 'Skype',

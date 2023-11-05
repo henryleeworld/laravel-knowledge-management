@@ -1,6 +1,6 @@
-# Laravel 8 知識庫
+# Laravel 10 知識庫
 
-團隊共用的內部筆記，會是減少重複詢問/人力耗損，提升整個團隊工作績效的重要解方。Laravel 8 知識庫主要是用的 [QuickAdminPanel](https://quickadminpanel.com) 生成的，除了一些定制代碼，可依需求彈性改造的工具。
+團隊共用的內部筆記，會是減少重複詢問/人力耗損，提升整個團隊工作績效的重要解方。
 
 ## 使用方式
 - 把整個專案複製一份到你的電腦裡，這裡指的「內容」不是只有檔案，而是指所有整個專案的歷史紀錄、分支、標籤等內容都會複製一份下來。
@@ -12,7 +12,7 @@ $ git clone
 ```sh
 $ composer install
 ```
-- 產⽣ Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
+- 產生 Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
 ```sh
 $ php artisan key:generate
 ```
@@ -20,14 +20,22 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate --seed
 ```
+- 執行安裝 Vite 和 Laravel 擴充套件引用的依賴項目。
+```sh
+$ npm install
+```
+- 執行正式環境版本化資源管道並編譯。
+```sh
+$ npm run build
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以登入經由 `/login` 來進行登入，預設的電子郵件和密碼分別為 __admin@admin.com__ 和 __password__ 。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/31F2ZEV.png)
+![](https://i.imgur.com/dszpbbi.png)
 > 新增問題，檢視解答是否完整
 
-![](https://i.imgur.com/z0cRpU4.png)
+![](https://i.imgur.com/MKqUZOu.png)
 > 設法將知識文字化，讓這無形的經驗化為有形的文字，建立起企業知識庫

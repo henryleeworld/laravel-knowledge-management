@@ -40,7 +40,12 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
     
-    public function sluggable()
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
     {
         return [
             'slug' => [

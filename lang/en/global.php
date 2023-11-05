@@ -206,6 +206,7 @@ return [
     'select_dt_placeholder'                => 'Please select one of date/time fields',
     'select_users_placeholder'             => 'Please select one of your Users',
     'send'                                 => 'Send',
+    'send_password_reset_link'             => 'Send Password Reset Link',
     'serial_number'                        => 'Serial number',
     'simple_user'                          => 'Simple user',
     'skype'                                => 'Skype',
